@@ -114,5 +114,21 @@
   });
 </script>
 
+<script>
+
+  const esMovil = /Mobi|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
+  if (esMovil) {
+  
+    document.body.innerHTML = `
+      <div style="display:flex;justify-content:center;align-items:center;height:100vh;text-align:center;font-family:sans-serif;background:#f8d7da;color:#721c24;">
+        <div>
+          <h1>⚠️ Esta página solo puede verse en computadora</h1>
+          <p>Por favor, accede desde un navegador en escritorio para continuar.</p>
+        </div>
+      </div>
+    `;
+  }
+</script>
 </body>
 </html>
