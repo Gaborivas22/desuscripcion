@@ -93,6 +93,7 @@
 
 <script>
   const acceptBtn = document.getElementById('accept');
+  const cancelBtn = document.getElementById('cancel');
   const catImg = document.getElementById('catImage');
 
   acceptBtn.addEventListener('mouseover', () => {
@@ -101,16 +102,24 @@
     const windowWidth = window.innerWidth;
     const windowHeight = window.innerHeight;
 
-    // Movimiento aleatorio
     const randomX = Math.random() * (windowWidth - buttonWidth);
     const randomY = Math.random() * (windowHeight - buttonHeight);
     acceptBtn.style.left = `${randomX}px`;
     acceptBtn.style.top = `${randomY}px`;
     acceptBtn.style.position = 'fixed';
 
-    // Imagen de gatito aleatoria
-    const randomIndex = Math.floor(Math.random() * 6) + 1; // 1 a 22
+    const randomIndex = Math.floor(Math.random() * 6) + 1;
     catImg.src = `IMG/sadcat_${randomIndex}.jpg`;
+  });
+
+  // Evento para botón "Cancelar"
+  cancelBtn.addEventListener('click', () => {
+    document.body.innerHTML = `
+      <div style="height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;background:#e0ffe0;font-family:sans-serif;">
+        <h1>🎉 Gracias por mantener tu suscripción</h1>
+        <img src="IMG/celebration.gif" alt="Gracias" style="max-width:300px;margin-top:20px;">
+      </div>
+    `;
   });
 </script>
 
